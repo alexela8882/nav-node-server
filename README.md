@@ -1,11 +1,11 @@
 # NAVISION 2017 Node Server
 
-## Staring server
+**STARTING THE SERVER**
 
 1. `cd /<project>/ (eg. nav-node-server)`
 2. `node index.js`
 
-## POSTMAN
+**POSTMAN**
 
 1. Open postman
 2. Select `POST` method the type in the url bar: `localhost:4000/post`
