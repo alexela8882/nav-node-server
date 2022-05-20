@@ -1,4 +1,5 @@
 var express = require('express');
+const cors = require('cors');
 var httpntlm = require('httpntlm');
 var bodyParser = require("body-parser");
 var router = express.Router();
@@ -6,6 +7,7 @@ var router = express.Router();
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json())
+app.use(cors())
 
 var PORT = 4000;
 
@@ -15,7 +17,7 @@ router.get('/', function(req, res) {
     console.log("Fetching data. Please wait...");
 
     httpntlm.get({
-      url: "http://LEKZPC:7048/DynamicsNAV100/ODataV4/Company('CRONUS%20International%20Ltd.')/SalesOrder",
+      url: "http://LEKZPC:7048/DynamicsNAV100/ODataV4/Company('CRONUS%20International%20Ltd.')",
       username: 'Admin',
       password: 'acf0106',
       workstation: '',
