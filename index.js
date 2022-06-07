@@ -37,7 +37,7 @@ router.get('/', function(req, res) {
 
 router.post('/post', function(req, res) {
   console.log("Fetching data. Please wait...");
-  console.log(req.body)
+  // console.log(req.body)
 
   var url = req.body.url
   var username = req.body.username
@@ -58,7 +58,11 @@ router.post('/post', function(req, res) {
     res.writeHead(200, { "Content-type": "application/json" });
     res.end(response.body);
 
-    console.log("Data fetch!")
+    let data = response.body ? response.body : 'Failed to fetch data!'
+
+    console.log(data);
+
+    if (response.body) console.log("Data fetch!");
   });
 });
 
