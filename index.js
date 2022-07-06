@@ -13,19 +13,19 @@ var whitelist = [
   'https://reddotcrm.com'
 ]
 
-var corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
-}
+// var corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   }
+// }
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json())
-app.use(cors(corsOptions))
+app.use(cors())
 
 var PORT = 4000;
 
@@ -60,6 +60,11 @@ router.post('/post', function(req, res) {
   var url = req.body.url
   var username = req.body.username
   var password = req.body.password
+
+  // console.log(req.body)
+
+  // res.writeHead(200, { "Content-type": "application/json" });
+  // res.end();
 
   httpntlm.get({
     url: url,
