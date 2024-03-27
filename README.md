@@ -3,7 +3,9 @@
 **STARTING THE SERVER**
 
 1. Go to project folder `cd nav-node-server`
-2. Type `node index.js` and hit enter
+2. `npm install`
+3. `npm update`
+4. Type `node index.js` and hit enter
 
 **POSTMAN**
 
